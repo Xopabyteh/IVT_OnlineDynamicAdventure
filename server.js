@@ -4,7 +4,7 @@ const storyTree = require('./storyTree');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-app.set('views', '../public/views')
+app.set('views', 'public/views')
 app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: true }));
@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.use(express.static(path.resolve(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join('public')));
 
 function normalizeBranchKey(branchKey) {
     if(typeof(branchKey) !== 'string') {
